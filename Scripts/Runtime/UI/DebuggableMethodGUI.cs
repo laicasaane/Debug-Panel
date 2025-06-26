@@ -26,5 +26,13 @@ namespace BrunoMikoski.DebugTools.GUI
         {
             debuggableInvokable.Invoke();
         }
+
+        private void OnEnable()
+        {
+            if (selectable != null && debuggableInvokable is DebuggableMethod debuggableMethod)
+            {
+                selectable.interactable = debuggableMethod.IsMethodEnabled();
+            }
+        }
     }
 }

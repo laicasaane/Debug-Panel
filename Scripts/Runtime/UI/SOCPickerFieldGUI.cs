@@ -22,9 +22,7 @@ namespace BrunoMikoski.DebugTools.GUI
         [SerializeField]
         private Button button;
 
-        [SerializeField] 
-        private TMP_Text displayField;
-
+        
         private Type selectableType;
 
         private void Awake()
@@ -51,7 +49,7 @@ namespace BrunoMikoski.DebugTools.GUI
 
         private void OnButtonClick()
         {
-            DebugPage pickerOptionsDebugPage = new DebugPage($"{DebugPage.PagePath}{displayField.text}",
+            DebugPage pickerOptionsDebugPage = new DebugPage($"{DebugPage.PagePath}{display.text}",
                 $"{selectableType.Name} Options", "");
             
             pickerOptionsDebugPage.SetParentPage(DebugPage);
@@ -84,7 +82,7 @@ namespace BrunoMikoski.DebugTools.GUI
             if (collectionItem != null)
                 displayValue = collectionItem.name;
             
-            displayField.text = displayValue;
+            display.text = displayValue;
         }
 
         public override bool CanBeUsedForField(FieldInfo targetFieldInfo)

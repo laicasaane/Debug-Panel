@@ -9,10 +9,10 @@ namespace BrunoMikoski.DebugTools.GUI
     internal sealed class PickerFieldGUI : DebuggableFieldGUIBase
     {
         [SerializeField]
-        private Button button;
-
-        [SerializeField] 
         private TMP_Text displayField;
+
+        [SerializeField]
+        private Button button;
 
         private Type selectableType;
 
@@ -30,7 +30,7 @@ namespace BrunoMikoski.DebugTools.GUI
         protected override void SetAsReadOnly()
         {
             base.SetAsReadOnly();
-            button.interactable = false;
+            selectable.interactable = false;
         }
 
         private void OnButtonClick()
